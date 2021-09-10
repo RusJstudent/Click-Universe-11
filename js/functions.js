@@ -27,7 +27,7 @@ function calcDamage(user, damage) {
 
     const persentageDmg = user.damage / 1000;
     let decreaseOfDmg = 1 / 100 * persentageDmg * damage;
-    let receivedDmg = Math.round(damage - decreaseOfDmg);
+    let receivedDmg = damage - decreaseOfDmg;
 
     const now = Date.now();
 
@@ -46,9 +46,9 @@ function calcDamage(user, damage) {
         receivedDmg = potentialDamage;
     }
 
-    let deviation = Math.floor(Math.random() * damageRange * receivedDmg);
+    let deviation = Math.random() * damageRange * receivedDmg;
     if (Math.random() < 0.5) deviation = -deviation;
-    receivedDmg += deviation;
+    receivedDmg += Math.round(deviation);
     result.damage = receivedDmg;
 
     let damageBlocked = Math.min(receivedDmg * shieldAbsorption, user.sh);
