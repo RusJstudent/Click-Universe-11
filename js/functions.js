@@ -48,7 +48,7 @@ function calcDamage(user, damage) {
 
     let deviation = Math.random() * damageRange * receivedDmg;
     if (Math.random() < 0.5) deviation = -deviation;
-    receivedDmg += Math.round(deviation);
+    receivedDmg = Math.round(receivedDmg + deviation);
     result.damage = receivedDmg;
 
     let damageBlocked = Math.min(receivedDmg * shieldAbsorption, user.sh);
