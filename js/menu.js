@@ -296,8 +296,6 @@ function displayUpgradeInfo(user, upgrades, upgradeButton, textElem, menuUpgrade
 
 function showLeaderboard() {
     const topPlayers = {
-        
-        'Hydro': 100,
         'Jenta': 200,
         'Mali': 500,
         'Plarion': 2000,
@@ -307,6 +305,7 @@ function showLeaderboard() {
         'Magmius': 15000,
         'Quattroid': 35000,
         'Motron': 3000,
+        'umood': 62800,
     };
 
     const entries = Object.entries(topPlayers);
